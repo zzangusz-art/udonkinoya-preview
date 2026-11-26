@@ -7,8 +7,8 @@
  function compare(name,index,original){
   const box=document.createElement('div');box.className='rc-compare';box.tabIndex=0;box.setAttribute('role','slider');box.setAttribute('aria-label',name+' 리뉴얼 전후 사진 비교');box.setAttribute('aria-valuemin','0');box.setAttribute('aria-valuemax','100');box.setAttribute('aria-valuenow','50');
   const after=document.createElement('div'),before=document.createElement('div');after.className='rc-image rc-after';before.className='rc-image rc-before';
-  before.append(img('images/renewal-case'+(index+1)+'-before.png',name+' 리뉴얼 전'));
-  after.append(img('images/renewal-case'+(index+1)+'-after.png',name+' 리뉴얼 후'));
+  before.append(img('images/renewal-case'+(index+1)+'-before.webp',name+' 리뉴얼 전'));
+  after.append(img('images/renewal-case'+(index+1)+'-after.webp',name+' 리뉴얼 후'));
   box.append(after,before);box.insertAdjacentHTML('beforeend','<span class="rc-tag rc-tag-before">BEFORE</span><span class="rc-tag rc-tag-after">AFTER · KINOYA</span><span class="rc-handle" aria-hidden="true"><span class="rc-knob">‹ &nbsp; ›</span></span><span class="rc-hint">좌우로 드래그해 비교해보세요</span>');
   let dragging=false,pos=50;
   const set=p=>{pos=Math.max(0,Math.min(100,p));box.style.setProperty('--pos',pos+'%');box.setAttribute('aria-valuenow',Math.round(pos));box.querySelector('.rc-tag-before').style.opacity=pos<14?'0':'1';box.querySelector('.rc-tag-after').style.opacity=pos>80?'0':'1';};
