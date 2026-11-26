@@ -1,0 +1,46 @@
+/* 우동키노야 창업 가이드(블로그) — 세느루 2026-11-26. 사이트 색상 변수(kinoya.css :root)를 따른다. */
+.blog-container{ max-width:780px; }
+.blog-article{ background:var(--off-white,#FAFCFF); color:var(--navy,#13202B); padding:48px 0 24px; }
+.blog-meta{ font-size:14px; opacity:.7; margin-bottom:24px; line-height:1.6; }
+.blog-scheduled{ color:#B4472B; }
+.blog-toc{ border:1px solid var(--line-light,rgba(19,32,43,.16)); border-radius:12px; padding:18px 22px; margin-bottom:32px; background:#fff; }
+.blog-toc-title{ font-size:14px; font-weight:700; margin-bottom:8px; }
+.blog-toc ol{ padding-left:20px; display:grid; gap:6px; }
+.blog-toc a{ font-size:15px; text-decoration:underline; text-underline-offset:3px; }
+.blog-body{ font-size:17px; line-height:1.85; word-break:keep-all; }
+.blog-body > p{ margin:0 0 18px; }
+.blog-body h2{ font-size:24px; line-height:1.4; margin:44px 0 14px; padding-top:8px; border-top:2px solid var(--navy,#13202B); }
+.blog-body h3{ font-size:19px; line-height:1.45; margin:28px 0 10px; }
+.blog-body ul,.blog-body ol{ margin:0 0 20px; padding-left:22px; display:grid; gap:8px; }
+.blog-body strong{ font-weight:700; background:linear-gradient(transparent 62%, rgba(235,216,178,.75) 0); }
+.blog-body a{ text-decoration:underline; }
+.table-wrap{ overflow-x:auto; margin:0 0 22px; -webkit-overflow-scrolling:touch; }
+.blog-body table{ width:100%; border-collapse:collapse; font-size:15px; line-height:1.55; min-width:520px; background:#fff; }
+.blog-body th,.blog-body td{ border:1px solid var(--line-light,rgba(19,32,43,.16)); padding:10px 12px; text-align:left; vertical-align:top; }
+.blog-body thead th{ background:var(--navy,#13202B); color:#fff; font-weight:700; }
+.blog-body tbody th{ background:var(--ivory,#F2F5F9); font-weight:700; white-space:nowrap; }
+.blog-faq{ margin-top:40px; }
+.blog-faq h2{ font-size:24px; margin-bottom:6px; }
+.blog-faq .qa-item{ border-top:1px solid var(--line-light,rgba(19,32,43,.16)); padding:18px 0; }
+.blog-faq h3{ font-size:18px; line-height:1.45; margin-bottom:8px; word-break:keep-all; }
+.blog-faq p{ font-size:16px; line-height:1.75; opacity:.88; word-break:keep-all; }
+.blog-next{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:36px 0 18px; }
+.blog-next a{ display:flex; flex-direction:column; gap:4px; padding:16px; border:1px solid var(--line-light,rgba(19,32,43,.16)); border-radius:12px; background:#fff; min-height:44px; }
+.blog-next strong{ font-size:16px; }
+.blog-next span{ font-size:13px; opacity:.7; }
+.blog-disclaimer{ font-size:13px; line-height:1.6; opacity:.62; margin-top:8px; }
+.blog-index,.blog-more{ background:var(--off-white,#FAFCFF); color:var(--navy,#13202B); padding:48px 0; }
+.blog-intro{ font-size:16px; line-height:1.75; margin-bottom:24px; word-break:keep-all; }
+.blog-more h2{ font-size:22px; margin-bottom:16px; }
+.blog-list{ list-style:none; display:grid; gap:12px; padding:0; }
+.blog-list a{ display:flex; flex-direction:column; gap:6px; padding:20px; border:1px solid var(--line-light,rgba(19,32,43,.16)); border-radius:12px; background:#fff; }
+.blog-list a:hover{ border-color:var(--navy,#13202B); }
+.bl-kw{ font-size:12px; letter-spacing:.06em; color:var(--broth,#8A6236); font-weight:700; }
+.blog-list strong{ font-size:18px; line-height:1.45; word-break:keep-all; }
+.bl-desc{ font-size:14px; line-height:1.6; opacity:.75; word-break:keep-all; }
+@media (max-width:640px){
+  .blog-article{ padding:32px 0 16px; }
+  .blog-body{ font-size:16px; }
+  .blog-body h2{ font-size:21px; margin-top:36px; }
+  .blog-next{ grid-template-columns:1fr; }
+}

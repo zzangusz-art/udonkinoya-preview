@@ -1,0 +1,62 @@
+/* 우동키노야 창업 리드 키트 (세느루, 2026-11-26) — js/lead-kit.js 와 함께 쓴다. 사이트 색상 변수(kinoya.css :root)를 따른다. */
+.lk-section{ padding:72px 0; background:var(--ivory,#F2F5F9); }
+.lk-section .container{ max-width:880px; }
+.lk-card{ background:#fff; border:1px solid var(--line-light,rgba(19,32,43,.16)); border-radius:14px; padding:28px; color:var(--navy,#13202B); box-shadow:0 10px 30px rgba(19,32,43,.06); }
+.lk-eyebrow{ font-size:12px; letter-spacing:.14em; color:var(--broth,#8A6236); font-weight:700; margin-bottom:8px; }
+.lk-title{ font-size:22px; line-height:1.4; font-weight:700; margin-bottom:8px; word-break:keep-all; }
+.lk-sub{ font-size:15px; line-height:1.6; opacity:.78; margin-bottom:20px; word-break:keep-all; }
+.lk-row2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+.lk-field{ display:flex; flex-direction:column; gap:6px; font-size:14px; font-weight:600; }
+.lk-field em{ color:#B4472B; font-style:normal; }
+.lk-field input,.lk-field select{ min-height:48px; padding:10px 14px; border:1px solid var(--line-light,rgba(19,32,43,.2)); border-radius:10px; font:inherit; font-weight:400; font-size:16px; background:var(--off-white,#FAFCFF); color:inherit; width:100%; }
+.lk-field input:focus,.lk-field select:focus{ outline:2px solid var(--broth,#8A6236); outline-offset:1px; }
+.lk-types{ border:0; display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 14px; }
+.lk-types legend{ font-size:14px; font-weight:600; margin-bottom:8px; }
+.lk-types label{ position:relative; }
+.lk-types input{ position:absolute; opacity:0; inset:0; }
+.lk-types span{ display:inline-flex; align-items:center; min-height:44px; padding:8px 14px; border:1px solid var(--line-light,rgba(19,32,43,.2)); border-radius:999px; font-size:14px; cursor:pointer; background:#fff; }
+.lk-types input:checked + span{ background:var(--navy,#13202B); color:#fff; border-color:var(--navy,#13202B); }
+.lk-types input:focus-visible + span{ outline:2px solid var(--broth,#8A6236); outline-offset:2px; }
+.lk-consent{ display:flex; gap:10px; align-items:flex-start; font-size:13px; line-height:1.55; opacity:.85; margin-bottom:18px; }
+.lk-consent input{ width:20px; height:20px; margin-top:1px; flex:0 0 auto; }
+.lk-consent a{ text-decoration:underline; }
+.lk-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+.lk-submit{ min-height:52px; padding:0 26px; border:0; border-radius:10px; background:var(--navy,#13202B); color:#fff; font:inherit; font-size:16px; font-weight:700; cursor:pointer; flex:1 1 220px; }
+.lk-submit:hover{ background:var(--navy-soft,#1D2F3D); }
+.lk-submit:disabled{ opacity:.6; cursor:wait; }
+.lk-tel{ min-height:52px; padding:0 20px; border:1px solid var(--navy,#13202B); border-radius:10px; display:inline-flex; align-items:center; justify-content:center; font-weight:700; color:var(--navy,#13202B); flex:0 1 auto; text-decoration:none; }
+.lk-preview{ margin-top:12px; font-size:13px; color:#B4472B; }
+.lk-done .lk-title{ color:var(--navy,#13202B); }
+.lk-models{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+.lk-model{ min-height:44px; padding:8px 16px; border:1px solid var(--line-light,rgba(19,32,43,.2)); border-radius:999px; background:#fff; font:inherit; font-size:14px; cursor:pointer; color:inherit; }
+.lk-model.is-on{ background:var(--navy,#13202B); color:#fff; border-color:var(--navy,#13202B); }
+.lk-result{ border-top:1px dashed var(--line-light,rgba(19,32,43,.2)); padding-top:18px; }
+.lk-amt{ font-size:28px; font-weight:800; letter-spacing:-.01em; margin-bottom:6px; }
+.lk-inc{ font-size:15px; line-height:1.6; margin-bottom:6px; word-break:keep-all; }
+.lk-note{ font-size:13px; line-height:1.6; opacity:.72; margin-bottom:16px; word-break:keep-all; }
+.lk-toast{ position:fixed; left:50%; bottom:96px; transform:translate(-50%,20px); background:var(--navy,#13202B); color:#fff; padding:14px 20px; border-radius:12px; font-size:15px; z-index:10000; opacity:0; transition:opacity .3s,transform .3s; max-width:calc(100vw - 32px); text-align:center; pointer-events:none; }
+.lk-toast.is-on{ opacity:1; transform:translate(-50%,0); }
+/* 질문형 요약(한눈에 보는 답변) */
+.qa-brief{ padding:64px 0; background:var(--off-white,#FAFCFF); color:var(--navy,#13202B); }
+.qa-brief .container{ max-width:880px; }
+.qa-brief h2{ font-size:26px; line-height:1.35; margin-bottom:8px; word-break:keep-all; }
+.qa-brief .qa-asof{ font-size:13px; opacity:.6; margin-bottom:24px; }
+.qa-brief .qa-item{ border-top:1px solid var(--line-light,rgba(19,32,43,.16)); padding:20px 0; }
+.qa-brief h3{ font-size:18px; line-height:1.45; margin-bottom:8px; word-break:keep-all; }
+.qa-brief p{ font-size:15px; line-height:1.75; opacity:.86; word-break:keep-all; }
+.qa-brief a{ text-decoration:underline; }
+/* 접근성 소제목(FAQ 버튼 감싸기) — 모양은 그대로 둔다 */
+.faq-h{ margin:0; padding:0; font:inherit; letter-spacing:inherit; line-height:inherit; color:inherit; }
+.footer-col .footer-h{ margin:0; }
+/* 미리보기 띠 */
+.kinoya-preview-bar{ position:fixed; left:0; right:0; top:0; z-index:99999; background:#B4472B; color:#fff; font-size:13px; text-align:center; padding:6px 12px; }
+@media (max-width:640px){
+  .lk-section{ padding:48px 0; }
+  .lk-card{ padding:20px; border-radius:12px; }
+  .lk-row2{ grid-template-columns:1fr; }
+  .lk-title{ font-size:19px; }
+  .lk-amt{ font-size:24px; }
+  .lk-toast{ bottom:84px; }
+  .qa-brief{ padding:48px 0; }
+  .qa-brief h2{ font-size:22px; }
+}
