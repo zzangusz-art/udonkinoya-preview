@@ -20,7 +20,20 @@
     const local = value.startsWith('/') && !value.startsWith('//') ? value.slice(1) : value;
     const url = new URL(local, root);
     if (!(media ? ['http:', 'https:'] : ['http:', 'https:', 'tel:', 'mailto:']).includes(url.protocol)) throw new Error('허용되지 않는 주소 형식입니다.');
-    return url.href;
+    return media ? lighter(url).href : url.href;
+  }
+  // 세느루 2026-11-26: CMS 가 원본 주소를 내려줘도 경량본을 쓴다.
+  // ① Genspark 에 올려 둔 첫 화면 영상(33.4MB) → 사이트 자체 압축본 images/hero-main.mp4(5.1MB)
+  // ② 같은 이름의 .webp 가 있는 PNG 사진 → .webp (tools/image-optimize-2026-11-26.json)
+  const MEDIA_SWAP = { 'public.gensparkspace.com/api/files/s/cmnGGbIo': 'images/hero-main.mp4' };
+  const WEBP = new Set(['conversion-geumcheon-after', 'conversion-geumcheon-before', 'conversion-hapjeong-after', 'conversion-hapjeong-before', 'food-basic-bukkake', 'franchise-before-after-1', 'franchise-before-after-2', 'franchise-before-after-3', 'franchise-conversion-cases', 'noodle-packed-udon', 'renewal-case1-after', 'renewal-case1-before', 'renewal-case2-after', 'renewal-case2-before', 'renewal-case3-after', 'renewal-case3-before', 'store-29-kondae', 'store-guri-pos-sales']);
+  function lighter(url) {
+    const key = url.host + url.pathname;
+    if (MEDIA_SWAP[key]) return new URL(MEDIA_SWAP[key], root);
+    const m = url.pathname.match(/\/images\/([\w-]+)\.png$/i);
+    const sameSite = url.origin === root.origin || /(^|\.)udonkinoya\.com$/.test(url.hostname);
+    if (m && sameSite && WEBP.has(m[1])) return new URL('images/' + m[1] + '.webp', root);
+    return url;
   }
   function cleanHTML(value, doc = document) {
     const t = doc.createElement('template'); t.innerHTML = String(value || '');
